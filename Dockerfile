@@ -2,6 +2,7 @@ FROM nginx:stable-alpine
 
 COPY index.html /usr/share/nginx/html/index.html
 COPY images /usr/share/nginx/html/images
+COPY shared /usr/share/nginx/html/shared
 
 EXPOSE 80
 
