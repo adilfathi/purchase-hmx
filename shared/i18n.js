@@ -16,7 +16,31 @@
   } catch(e) {}
 
   // 1. Dictionaries for TOC & Section Titles (both bare and numbered)
+  
+  // Vendor Portal Bidirectional Dictionary
+  const I18N_VENDOR_MAP = {
+    'Tentang Vendor Portal & Prasyarat': 'About Vendor Portal & Prerequisites',
+    'V.1 Tentang HMX Vendor Portal & Prasyarat Sistem': 'V.1 About HMX Vendor Portal & System Prerequisites',
+    'Pendaftaran Vendor Baru (6 Langkah)': 'New Vendor Registration (6 Steps)',
+    'V.2 Pendaftaran Vendor Baru (6 Langkah Kepatuhan Legal & Bank)': 'V.2 New Vendor Registration (6 Legal & Bank Compliance Steps)',
+    'Masuk & Autentikasi (Login)': 'Sign In & Authentication (Login)',
+    'V.3 Masuk & Autentikasi Vendor Portal (Login & Keamanan)': 'V.3 Sign In & Authentication (Login & Security)',
+    'Dasbor & Ruang Kerja Vendor': 'Vendor Workspace & Dashboard',
+    'V.4 Dasbor & Ruang Kerja Vendor (Vendor Workspace)': 'V.4 Vendor Workspace & Dashboard',
+    'Partisipasi Tender (Tender Purchase)': 'Tender Participation (Purchase Tender & E-Auction)',
+    'V.5 Partisipasi Tender Pembelian (Purchase Tender & E-Auction)': 'V.5 Tender Participation (Purchase Tender & E-Auction)',
+    'Permintaan Penawaran Harga (RFQ)': 'Request for Quotation (RFQ)',
+    'V.6 Permintaan Penawaran Harga (Request for Quotation / RFQ)': 'V.6 Request for Quotation (RFQ)',
+    'Pesanan Pembelian (PO) & Cetak PDF': 'Purchase Orders (PO) & PDF Download',
+    'V.7 Pesanan Pembelian (Purchase Order) & Unduh Dokumen': 'V.7 Purchase Orders (PO) & Document Download',
+    'Alur Integrasi (Vendor ↔ Company)': 'End-to-End Integration Flow (Vendor ↔ Company)',
+    'V.8 Analisis Alur Integrasi End-to-End (Vendor ↔ Company)': 'V.8 End-to-End Integration Flow Analysis (Vendor ↔ Company)',
+    'Penanganan Kendala (Troubleshooting)': 'Troubleshooting Guide',
+    'V.9 Panduan Penanganan Kendala (Troubleshooting) Vendor Portal': 'V.9 Vendor Portal Troubleshooting Guide'
+  };
+
   const I18N_TOC = {
+    
     'Cover': 'Sampul Depan',
     'Copyright': 'Hak Cipta',
     'Basic Configuration': 'Konfigurasi Dasar',
@@ -1856,6 +1880,20 @@
   function restoreEnglish() {
     document.title = 'Purchase Module - User Manual (HMX v1.0)';
 
+    // Convert Vendor Portal TOC & Headings to English
+    document.querySelectorAll('#toc-vendor-group .toc-item').forEach(item => {
+      const textEl = item.querySelector('.toc-text');
+      if (textEl) {
+        const txt = textEl.textContent.trim();
+        if (I18N_VENDOR_MAP[txt]) textEl.textContent = I18N_VENDOR_MAP[txt];
+      }
+    });
+    document.querySelectorAll('.section.vendor-only h2').forEach(h => {
+      const txt = h.textContent.trim();
+      if (I18N_VENDOR_MAP[txt]) h.textContent = I18N_VENDOR_MAP[txt];
+    });
+
+
     document.querySelectorAll('[data-hmx-i18n]').forEach(el => {
       if (el.__hmx_orig_en !== undefined) {
         el.textContent = el.__hmx_orig_en;
@@ -1880,6 +1918,24 @@
 
   function translateToIndonesian() {
     document.title = 'Modul Pembelian - Panduan Pengguna (HMX v1.0)';
+
+    // Convert Vendor Portal TOC & Headings to Indonesian
+    document.querySelectorAll('#toc-vendor-group .toc-item').forEach(item => {
+      const textEl = item.querySelector('.toc-text');
+      if (textEl) {
+        const txt = textEl.textContent.trim();
+        for (const [idText, enText] of Object.entries(I18N_VENDOR_MAP)) {
+          if (txt === enText) { textEl.textContent = idText; break; }
+        }
+      }
+    });
+    document.querySelectorAll('.section.vendor-only h2').forEach(h => {
+      const txt = h.textContent.trim();
+      for (const [idText, enText] of Object.entries(I18N_VENDOR_MAP)) {
+        if (txt === enText) { h.textContent = idText; break; }
+      }
+    });
+
 
     // Search placeholder
     const searchInput = document.querySelector('.toc-search input');
