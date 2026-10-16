@@ -44,6 +44,12 @@
     'Cover': 'Sampul Depan',
     'Copyright': 'Hak Cipta',
     'Basic Configuration': 'Konfigurasi Dasar',
+
+    'Basic Configuration & System Access': 'Konfigurasi Dasar & Akses Sistem',
+    '0 Basic Configuration & System Access': '0 Konfigurasi Dasar & Akses Sistem',
+    'Konfigurasi Dasar & Akses Sistem': 'Basic Configuration & System Access',
+    '0 Konfigurasi Dasar & Akses Sistem': '0 Basic Configuration & System Access',
+
     'User Flow': 'Alur Kerja Pengguna (User Flow)',
     'Purchase': 'Modul Pembelian (Purchase Overview)',
     'Master Configuration': 'Konfigurasi Master',
