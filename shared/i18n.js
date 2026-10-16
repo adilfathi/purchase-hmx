@@ -16,27 +16,93 @@
   } catch(e) {}
 
   // 1. Dictionaries for TOC & Section Titles (both bare and numbered)
-  
-  // Vendor Portal Bidirectional Dictionary
+  // Vendor Portal Bidirectional Dictionary (Formal Report Structure - No 'V' prefix)
   const I18N_VENDOR_MAP = {
-    'Tentang Vendor Portal & Prasyarat': 'About Vendor Portal & Prerequisites',
-    'V.1 Tentang HMX Vendor Portal & Prasyarat Sistem': 'V.1 About HMX Vendor Portal & System Prerequisites',
-    'Pendaftaran Vendor Baru (6 Langkah)': 'New Vendor Registration (6 Steps)',
-    'V.2 Pendaftaran Vendor Baru (6 Langkah Kepatuhan Legal & Bank)': 'V.2 New Vendor Registration (6 Legal & Bank Compliance Steps)',
-    'Masuk & Autentikasi (Login)': 'Sign In & Authentication (Login)',
-    'V.3 Masuk & Autentikasi Vendor Portal (Login & Keamanan)': 'V.3 Sign In & Authentication (Login & Security)',
-    'Dasbor & Ruang Kerja Vendor': 'Vendor Workspace & Dashboard',
-    'V.4 Dasbor & Ruang Kerja Vendor (Vendor Workspace)': 'V.4 Vendor Workspace & Dashboard',
-    'Partisipasi Tender (Tender Purchase)': 'Tender Participation (Purchase Tender & E-Auction)',
-    'V.5 Partisipasi Tender Pembelian (Purchase Tender & E-Auction)': 'V.5 Tender Participation (Purchase Tender & E-Auction)',
+    'Kanal Dukungan': 'Support Channel',
+    'Support Channel': 'Kanal Dukungan',
+    'Waktu Operasional': 'Operating Hours',
+    'Operating Hours': 'Waktu Operasional',
+    'Cakupan Bantuan': 'Support Scope',
+    'Support Scope': 'Cakupan Bantuan',
+    'Helpdesk Registrasi ERP': 'ERP Registration Helpdesk',
+    'ERP Registration Helpdesk': 'Helpdesk Registrasi ERP',
+    'Unit Layanan Tender & Lelang': 'Tender & E-Auction Desk',
+    'Tender & E-Auction Desk': 'Unit Layanan Tender & Lelang',
+    'Finance & Settlement Desk': 'Finance & Settlement Desk',
+
+    // Bab 1
+    'Pendahuluan & Akses Sistem': 'Introduction & System Access',
+    '1 Pendahuluan & Akses Sistem': '1 Introduction & System Access',
+    'Gambaran Umum & Ekosistem E-Procurement': 'Overview & E-Procurement Ecosystem',
+    '1.1 Gambaran Umum & Ekosistem E-Procurement': '1.1 Overview & E-Procurement Ecosystem',
+    'Akses Portal & Prasyarat Teknis': 'Portal Access & Technical Prerequisites',
+    '1.2 Akses Portal & Prasyarat Teknis': '1.2 Portal Access & Technical Prerequisites',
+
+    // Bab 2
+    'Registrasi & Kualifikasi Rekanan': 'Vendor Registration & Qualification',
+    '2 Registrasi & Kualifikasi Rekanan': '2 Vendor Registration & Qualification',
+    'Pembuatan Akun Kredensial Awal': 'Initial Account Credential Creation',
+    '2.1 Pembuatan Akun Kredensial Awal': '2.1 Initial Account Credential Creation',
+    'Wizard 6 Langkah Kepatuhan Legalitas & Perbankan': '6-Step Legal & Bank Compliance Wizard',
+    '2.2 Wizard 6 Langkah Kepatuhan Legalitas & Perbankan': '2.2 6-Step Legal & Bank Compliance Wizard',
+
+    // Bab 3
+    'Autentikasi & Keamanan Sesi': 'Authentication & Session Security',
+    '3 Autentikasi & Keamanan Sesi': '3 Authentication & Session Security',
+    'Prosedur Masuk Sistem (Login)': 'Sign In Procedure (Login)',
+    '3.1 Prosedur Masuk Sistem (Login)': '3.1 Sign In Procedure (Login)',
+    'Keamanan Sesi & Pemulihan Akses': 'Session Security & Access Recovery',
+    '3.2 Keamanan Sesi & Pemulihan Akses': '3.2 Session Security & Access Recovery',
+
+    // Bab 4
+    'Dasbor & Ruang Kerja Vendor': 'Vendor Dashboard & Workspace',
+    '4 Dasbor & Ruang Kerja Vendor': '4 Vendor Dashboard & Workspace',
+    'Navigasi Ruang Kerja (Workspace)': 'Workspace Navigation',
+    '4.1 Navigasi Ruang Kerja (Workspace)': '4.1 Workspace Navigation',
+    'Pemantauan Metrik Kinerja Pengadaan': 'Procurement Performance Metric Monitoring',
+    '4.2 Pemantauan Metrik Kinerja Pengadaan': '4.2 Procurement Performance Metric Monitoring',
+
+    // Bab 5
+    'Partisipasi Tender & Lelang Elektronik': 'Tender Participation & E-Auction',
+    '5 Partisipasi Tender & Lelang Elektronik': '5 Tender Participation & E-Auction',
+    'Pencarian Peluang Tender Terbuka': 'Exploring Open Tender Opportunities',
+    '5.1 Pencarian Peluang Tender Terbuka': '5.1 Exploring Open Tender Opportunities',
+    'Pengajuan Penawaran Harga (Submit Quotation)': 'Submitting Quotation & Price Bids',
+    '5.2 Pengajuan Penawaran Harga (Submit Quotation)': '5.2 Submitting Quotation & Price Bids',
+    'Pengumuman Pemenang & Alokasi Kontrak': 'Winner Announcement & Contract Allocation',
+    '5.3 Pengumuman Pemenang & Alokasi Kontrak': '5.3 Winner Announcement & Contract Allocation',
+
+    // Bab 6
     'Permintaan Penawaran Harga (RFQ)': 'Request for Quotation (RFQ)',
-    'V.6 Permintaan Penawaran Harga (Request for Quotation / RFQ)': 'V.6 Request for Quotation (RFQ)',
-    'Pesanan Pembelian (PO) & Cetak PDF': 'Purchase Orders (PO) & PDF Download',
-    'V.7 Pesanan Pembelian (Purchase Order) & Unduh Dokumen': 'V.7 Purchase Orders (PO) & Document Download',
-    'Alur Integrasi (Vendor ↔ Company)': 'End-to-End Integration Flow (Vendor ↔ Company)',
-    'V.8 Analisis Alur Integrasi End-to-End (Vendor ↔ Company)': 'V.8 End-to-End Integration Flow Analysis (Vendor ↔ Company)',
-    'Penanganan Kendala (Troubleshooting)': 'Troubleshooting Guide',
-    'V.9 Panduan Penanganan Kendala (Troubleshooting) Vendor Portal': 'V.9 Vendor Portal Troubleshooting Guide'
+    '6 Permintaan Penawaran Harga (RFQ)': '6 Request for Quotation (RFQ)',
+    'Peninjauan Undangan Penawaran Langsung': 'Reviewing Direct Quotation Invitations',
+    '6.1 Peninjauan Undangan Penawaran Langsung': '6.1 Reviewing Direct Quotation Invitations',
+    'Pengiriman Penawaran & Estimasi Pengiriman': 'Submitting Quotations & Delivery Commitments',
+    '6.2 Pengiriman Penawaran & Estimasi Pengiriman': '6.2 Submitting Quotations & Delivery Commitments',
+
+    // Bab 7
+    'Pesanan Pembelian (Purchase Order) & Dokumen': 'Purchase Order & Documents',
+    '7 Pesanan Pembelian (Purchase Order) & Dokumen': '7 Purchase Order & Documents',
+    'Pemeriksaan & Konfirmasi Komitmen Pesanan': 'Order Review & Commitment Confirmation',
+    '7.1 Pemeriksaan & Konfirmasi Komitmen Pesanan': '7.1 Order Review & Commitment Confirmation',
+    'Unduh Dokumen Legal Format PDF': 'Downloading Legal PDF Documents',
+    '7.2 Unduh Dokumen Legal Format PDF': '7.2 Downloading Legal PDF Documents',
+
+    // Bab 8
+    'Alur Integrasi Sistem (Vendor ↔ Pembeli)': 'System Integration Flow (Vendor ↔ Buyer)',
+    '8 Alur Integrasi Sistem (Vendor ↔ Pembeli)': '8 System Integration Flow (Vendor ↔ Buyer)',
+    'Siklus Transaksi Terpadu End-to-End': 'End-to-End Integrated Transaction Lifecycle',
+    '8.1 Siklus Transaksi Terpadu End-to-End': '8.1 End-to-End Integrated Transaction Lifecycle',
+    'Matriks Alur Kerja Antar-Entitas': 'Cross-Entity Workflow Matrix',
+    '8.2 Matriks Alur Kerja Antar-Entitas': '8.2 Cross-Entity Workflow Matrix',
+
+    // Bab 9
+    'Penanganan Kendala Operasional (Troubleshooting)': 'Operational Troubleshooting & Support',
+    '9 Penanganan Kendala Operasional (Troubleshooting)': '9 Operational Troubleshooting & Support',
+    'Diagnosa Masalah & Langkah Penyelesaian': 'Issue Diagnosis & Resolution Steps',
+    '9.1 Diagnosa Masalah & Langkah Penyelesaian': '9.1 Issue Diagnosis & Resolution Steps',
+    'Bantuan Teknis & Kontak Pengadaan': 'Technical Support & Procurement Contacts',
+    '9.2 Bantuan Teknis & Kontak Pengadaan': '9.2 Technical Support & Procurement Contacts'
   };
 
   const I18N_TOC = {
@@ -1901,6 +1967,9 @@
 
 
     document.querySelectorAll('[data-hmx-i18n]').forEach(el => {
+      if (el.closest('#toc-vendor-group') || el.closest('.section.vendor-only')) {
+        return;
+      }
       if (el.__hmx_orig_en !== undefined) {
         el.textContent = el.__hmx_orig_en;
       }
@@ -1959,6 +2028,7 @@
 
     // TOC items
     document.querySelectorAll('.toc-item').forEach(item => {
+      if (item.closest('#toc-vendor-group')) return;
       const textEl = item.querySelector('.toc-text');
       if (textEl) {
         saveOriginal(textEl);
@@ -1972,6 +2042,7 @@
 
     // Section titles (h1, h2)
     document.querySelectorAll('.section h1, .section h2').forEach(h => {
+      if (h.closest('.section.vendor-only')) return;
       saveOriginal(h);
       h.setAttribute('data-hmx-i18n', 'true');
       const orig = h.__hmx_orig_en.trim();
